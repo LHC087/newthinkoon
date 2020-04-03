@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="思空、思空文化、思空集团、思空科技、思空MCN、红人孵化与营销、整合营销、口碑营销" />
+    <meta name='description'
+        content="思空，于2016年成立于深圳，专注于新媒体内容生产，红人经济，营销传播的top mcn 公司。思空文化自营资源覆盖全网4亿粉丝，每月制造热点话题100+，思空文化擅长事件营销，口碑种草，提供更具“传播性”的营销服务。">
+    <title>思空 - 红人孵化与营销</title>
+    <link href="image/index/heardlogo.png" rel="icon" type="image/x-icon" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body id="index">
+    <div id='kolpage'>
+        <div id="showmenu">
+            <div class='header publiccontent'>
+                <div class="headerlogo">
+                    <a href="index.html"><img src="image/index/logo.png" alt="logo"></a>
+                </div>
+                <div class="headermenu">
+                    <a class="activehover" href="index.html#portfolio"><span>资源矩阵</span></a>
+                    <a href="index.html#case"><span>营销案例</span></a>
+                    <a href="index.html#recruiting"><span>红人招募</span></a>
+                    <a href="#contact"><span>联系我们</span></a>
+                </div>
+            </div>
+        </div>
+        <section>
+            <div>
+                <img class="lazy wid100" :data-original="headbanner" alt="Image01">
+            </div>
+        </section>
+
+        <section id="kol">
+            <div class='publiccontent'>
+                <div id='item'>
+                    <ul v-for='(item,index) in kolitem' :key="index">
+                        <li :class="[nameindex==item.id ? item.classname:'']" @click=" selectnamelist(item.id)"
+                            @mouseenter="selectnamelist(item.id)">
+                            {{item.name}}
+                        </li>
+                    </ul>
+                </div>
+                <div class="kollist">
+                    <ul>
+                        <li v-for="(item,index) in peoplelist" :key="index">
+                            <a :href="item.url" target="_blank" rel="noopener noreferrer">
+                                <img class="wid100 bora50" :src="item.img" alt="img" />
+                                <h5>{{item.name}}</h5>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <div class='publiccontent'>
+                <div class="publictitle">
+                    <h4>{{contacttitle}}</h4>
+                    <p>{{contactentitle}}</p>
+                </div>
+                <div class="pore">
+                    <div class='company'>
+                        <h5>{{company}}</h5>
+                        <h6>{{companyphone}}</h6>
+                        <p>{{companyaddress1}}</p>
+                        <p>{{companyaddress2}}</p>
+                        <p>{{companyaddress3}}</p>
+                        <!-- <img class="lazy companyicon" :data-original="icon1" alt="icon" />
+                        <img class="lazy companyicon" :data-original="icon2" alt="icon" /> -->
+                    </div>
+                    <div class="contantimg">
+                        <div class="contantimgdiv1">
+                            <img class="lazy" :data-original="contantimg1" alt="contantimg1" />
+                            <h5>{{contantcontant1}}</h5>
+                        </div>
+                        <div class="contantimgdiv2">
+                            <img class="lazy" :data-original="contantimg2" alt="contantimg2" />
+                            <h5>{{contantcontant2}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <img id="btn" class="joinus" :src="joinimg">
+        <a href="#index"> <img class="top" :src="topimg"></a>
+        <div id="showjoin" class="showjoins">
+            <div class="showjoindiv">
+                <a id="btncolse">关闭</a>
+                <img alt="join" :src="showjoinimg" />
+                <a v-for='(item,index) in showjoinlist' :key='index' :href="item.url" target="_blank"
+                    :class="'showjoina'+index" rel="noopener noreferrer">
+                    {{item.name}}
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.lazyload.js?v=1.9.1"></script>
+<script src="js/vue.js"></script>
+<script type="text/javascript">
+    var app = new Vue({
+        el: '#kolpage',
+        data: {
+            headbanner: 'image/kol/banner.jpg',
+            kolitem: [{
+                id: 1,
+                name: '独家KOL',
+                classname: 'li1'
+            }, {
+                id: 2,
+                name: '白鹿美妆',
+                classname: 'li2'
+            }, {
+                id: 3,
+                name: '石榴美食',
+                classname: 'li3'
+            }, {
+                id: 4,
+                name: '有宝母婴',
+                classname: 'li4'
+            }],
+            nameindex: 1,
+            peoplelist: [],
+            peoplelist1: [{
+                name: '回忆专用小马甲',
+                url: 'https://weibo.com/u/3217179555',
+                img: 'image/kol/kol1/1.png'
+            }, {
+                name: '然后下面就没了',
+                url: 'https://weibo.com/u/2006455031?topnav=1&wvr=6&topsug=1&is_hot=1',
+                img: 'image/kol/kol1/2.png'
+            }, {
+                name: '追风少年刘全有',
+                url: 'https://weibo.com/u/2150511032',
+                img: 'image/kol/kol1/3.png'
+            }, {
+                name: '谷大白话',
+                url: 'https://weibo.com/ichthy?refer_flag=1005055014_',
+                img: 'image/kol/kol1/4.png'
+            }, {
+                name: '文科班校花酱',
+                url: 'https://weibo.com/u/2259906485?topnav=1&wvr=6&topsug=1&is_hot=1',
+                img: 'image/kol/kol1/5.jpg'
+            }, {
+                name: '耳帝',
+                url: 'https://weibo.com/eargod',
+                img: 'image/kol/kol1/6.jpg'
+            }, {
+                name: '德卡先生的信箱',
+                url: 'https://weibo.com/p/1005053163213212/home?from=page_100505&mod=TAB#place',
+                img: 'image/kol/kol1/7.png'
+            }, {
+                name: '松鼠视频',
+                url: 'https://weibo.com/u/2393541445?',
+                img: 'image/kol/kol1/8.png'
+            }],
+            peoplelist2: [{
+                name: '大睿睿',
+                url: 'https://www.xiaohongshu.com/user/profile/53d39b5bb4c4d6733971ae73',
+                img: 'image/kol/kol2/1.jpg'
+            }, {
+                name: '晁然然然然',
+                url: 'https://weibo.com/u/2140998643',
+                img: 'image/kol/kol2/2.jpeg'
+            }, {
+                name: '是丸子啊',
+                url: 'https://www.xiaohongshu.com/user/profile/56c51ff1aed7581d118f26de',
+                img: 'image/kol/kol2/3.jpeg'
+            }, {
+                name: '孔维w',
+                url: 'https://weibo.com/numberw',
+                img: 'image/kol/kol2/4.jpeg'
+            }, {
+                name: '棚户区男孩',
+                url: 'https://weibo.com/mozart1994',
+                img: 'image/kol/kol2/7.png'
+            }, {
+                name: '小萝卜heidi',
+                url: 'https://www.xiaohongshu.com/user/profile/5a2fad1e4eacab7fff395adf',
+                img: 'image/kol/kol2/8.jpeg'
+            }, {
+                name: '郑蛋恩',
+                url: 'https://weibo.com/loviancheng',
+                img: 'image/kol/kol2/9.jpeg'
+            }, {
+                name: '喜悦姑娘Clara',
+                url: 'https://www.xiaohongshu.com/user/profile/596f20d582ec3965e7d47959',
+                img: 'image/kol/kol2/10.jpeg'
+            }, {
+                name: '胡老吃',
+                url: 'https://weibo.com/u/6524340899?topnav=1&wvr=6&topsug=1',
+                img: 'image/kol/kol2/11.png'
+            }, {
+                name: '张气象Arma',
+                url: 'https://weibo.com/u/6550554054?topnav=1&wvr=6&topsug=1',
+                img: 'image/kol/kol2/12.png'
+            }, {
+                name: '小霸天Miniba',
+                url: 'https://weibo.com/u/7020182971',
+                img: 'image/kol/kol2/13.jpg'
+            }, {
+                name: '施雅莉Lilith',
+                url: 'https://weibo.com/yalishi?topnav=1&wvr=6&topsug=1',
+                img: 'image/kol/kol2/14.png'
+            }, {
+                name: '优眯yumi',
+                url: 'https://www.xiaohongshu.com/user/profile/596cf50082ec392fa1d478c3?_at=70c5b33a6a6dfdd6080e930b1d5a0cff90302',
+                img: 'image/kol/kol2/15.jpg'
+            }, {
+                name: '88不是二师弟',
+                url: 'https://www.xiaohongshu.com/user/profile/56ed992384edcd51aa49b81c',
+                img: 'image/kol/kol2/16.jpg'
+            }, {
+                name: '焱焱煜焰KiWi',
+                url: 'https://www.xiaohongshu.com/user/profile/585595fa82ec3927b8d6b840',
+                img: 'image/kol/kol2/17.jpg'
+            }, {
+                name: 'RoseinLondon',
+                url: 'https://www.xiaohongshu.com/user/profile/5721ef3faed758597f8cfd01',
+                img: 'image/kol/kol2/18.jpg'
+            }, {
+                name: '芥末色的喵',
+                url: 'https://www.xiaohongshu.com/user/profile/555726bac2bdeb32c9c195d3',
+                img: 'image/kol/kol2/19.jpg'
+            }, {
+                name: '舌灿桃花',
+                url: 'https://www.xiaohongshu.com/user/profile/59c2192d51783a4a58250cfe',
+                img: 'image/kol/kol2/20.jpg'
+            }, {
+                name: '想想TALKING',
+                url: 'https://www.xiaohongshu.com/user/profile/5a2577984eacab1a2830653e',
+                img: 'image/kol/kol2/21.jpg'
+            }, {
+                name: '-绯绯酱-',
+                url: 'https://www.xiaohongshu.com/user/profile/565e2e4e0cdc2b51bae7f3c9',
+                img: 'image/kol/kol2/22.jpg'
+            }, {
+                name: '林子熙',
+                url: 'https://www.xiaohongshu.com/user/profile/56dcd49084edcd4df0b366f9',
+                img: 'image/kol/kol2/23.jpg'
+            }, {
+                name: 'Una优娜',
+                url: 'https://www.xiaohongshu.com/user/profile/56768f3d6a6a6958b6e8627e',
+                img: 'image/kol/kol2/24.jpg'
+            }, {
+                name: 'Evanmelisa',
+                url: 'https://www.xiaohongshu.com/user/profile/582d3bb65e87e76935712e4c',
+                img: 'image/kol/kol2/25.jpg'
+            }, {
+                name: '苗苗谷biubiu',
+                url: 'https://www.xiaohongshu.com/user/profile/54e86d272e1d936f8eedb0f1',
+                img: 'image/kol/kol2/26.jpg'
+            }, {
+                name: '林木森Harper',
+                url: 'https://www.xiaohongshu.com/user/profile/583b72505e87e72893f81eff',
+                img: 'image/kol/kol2/27.jpg'
+            }, {
+                name: 'GracefulYvonne',
+                url: 'https://www.xiaohongshu.com/user/profile/54c5fa78b4c4d60e63bd4a33',
+                img: 'image/kol/kol2/28.jpg'
+            }, {
+                name: 'Miss两点半',
+                url: 'https://www.xiaohongshu.com/user/profile/5407f6fbb4c4d6132893bcca',
+                img: 'image/kol/kol2/29.jpg'
+            }, {
+                name: '林迷路迷路',
+                url: 'https://www.xiaohongshu.com/user/profile/57c1b9715e87e77896a49378?_at=54fa3b0a63aab7d87fbbae5694b820d128424',
+                img: 'image/kol/kol2/30.jpg'
+            }, {
+                name: 'Luhyom',
+                url: 'https://www.xiaohongshu.com/user/profile/588c606982ec39769e4a761b',
+                img: 'image/kol/kol2/31.jpg'
+            }, {
+                name: '做梦的梦',
+                url: 'https://www.xiaohongshu.com/user/profile/592d45866a6a695edf7180d0?_at=837bf07ede24b49169636a77b274a6b90c7a2',
+                img: 'image/kol/kol2/32.jpg'
+            }, {
+                name: 'SUMEY',
+                url: 'https://www.xiaohongshu.com/user/profile/5a6eac3911be1023f8abbc42',
+                img: 'image/kol/kol2/34.jpg'
+            }, {
+                name: 'Valerieyeah',
+                url: 'https://www.xiaohongshu.com/user/profile/592790f982ec3938615cfac7?_rd=2019012318572780581fe00e292c2230',
+                img: 'image/kol/kol2/35.jpg'
+            }, {
+                name: '五酱',
+                url: 'https://www.xiaohongshu.com/user/profile/567e53944775a753f94f907b',
+                img: 'image/kol/kol2/36.jpg'
+            }, {
+                name: '团团有两只喵',
+                url: 'https://www.xiaohongshu.com/user/profile/5a93ca25e8ac2b47457adda0',
+                img: 'image/kol/kol2/37.jpg'
+            }, {
+                name: 'Bystander',
+                url: 'https://www.xiaohongshu.com/user/profile/5b2620efe8ac2b3b34f5bdae',
+                img: 'image/kol/kol2/38.jpg'
+            }, {
+                name: '是喵妙呀',
+                url: 'https://www.xiaohongshu.com/user/profile/58c373fd5e87e71f793d6db4?xhsshare=CopyLink&appuid=57bfbcc934609445bd6099d9&apptime=1585316631',
+                img: 'image/kol/kol2/39.jpg'
+            }, {
+                name: 'winjoo',
+                url: 'https://www.xiaohongshu.com/user/profile/599121ed5e87e72c659d8dad',
+                img: 'image/kol/kol2/40.jpg'
+            }, {
+                name: 'LiaSuennn',
+                url: 'https://www.xiaohongshu.com/user/profile/590c9a9e5e87e74ce72b81a7?xhsshare',
+                img: 'image/kol/kol2/41.jpg'
+            }, {
+                name: '3多同学',
+                url: 'https://www.xiaohongshu.com/user/profile/565a315f0cdc2b0360354325',
+                img: 'image/kol/kol2/42.jpg'
+            }, {
+                name: '-chunchunray-',
+                url: 'https://www.xiaohongshu.com/user/profile/56e3d8231c07df6b23b6410e',
+                img: 'image/kol/kol2/43.jpg'
+            }, {
+                name: 'RuRu_1118',
+                url: 'https://www.xiaohongshu.com/user/profile/58e638505e87e73e80663bf2?xhsshare=CopyLink&appuid=57bfbcc934609445bd6099d9&apptime=1585316605',
+                img: 'image/kol/kol2/44.jpg'
+            }, {
+                name: '棒棒棒子影',
+                url: 'https://www.xiaohongshu.com/user/profile/58774bb76a6a690ab4ba090b',
+                img: 'image/kol/kol2/45.jpg'
+            }, {
+                name: '-杨铁柱-',
+                url: 'https://www.xiaohongshu.com/user/profile/54e5a6b9b4c4d621f96298dc',
+                img: 'image/kol/kol2/46.jpg'
+            }, {
+                name: '阎沫汐',
+                url: 'https://www.xiaohongshu.com/user/profile/57944da65e87e753bec91e36',
+                img: 'image/kol/kol2/47.jpg'
+            }],
+            peoplelist3: [{
+                name: '刘仪伟',
+                url: 'https://v.douyin.com/7srvkd/',
+                img: 'image/kol/kol3/1.png'
+            }, {
+                name: '郭科',
+                url: 'https://v.douyin.com/7sFEkN/',
+                img: 'image/kol/kol3/2.png'
+            }, {
+                name: '食尚小米',
+                url: 'https://v.douyin.com/7sRdC7/',
+                img: 'image/kol/kol3/3.png'
+            }, {
+                name: '法国人安闹闹',
+                url: 'https://v.douyin.com/7pKnYr/',
+                img: 'image/kol/kol3/4.png'
+            }, {
+                name: '深夜美食家胖哥',
+                url: 'https://v.douyin.com/7sUyNG/',
+                img: 'image/kol/kol3/5.png'
+            }],
+            peoplelist4: [{
+                name: 'echo小茵茵',
+                url: 'https://weibo.com/justechochan?topnav=1&wvr=6&topsug=1',
+                img: 'image/kol/kol4/1.png'
+            }, {
+                name: '可可的粽子妈',
+                url: 'https://weibo.com/u/6171687597',
+                img: 'image/kol/kol4/2.jpg'
+            }, {
+                name: '芒果宓',
+                url: 'https://weibo.com/mango5day',
+                img: 'image/kol/kol4/3.png'
+            }, {
+                name: '阿瑞呀',
+                url: 'https://weibo.com/sosorrysorrysorry?is_hot=1',
+                img: 'image/kol/kol4/4.png'
+            }, {
+                name: '雅妮妈妈讲艺术',
+                url: 'https://weibo.com/dongxiaoyan917?topnav=1&wvr=6&topsug=1',
+                img: 'image/kol/kol4/5.png'
+            }, {
+                name: 'Kira小魔女',
+                url: 'https://weibo.com/u/3193441137',
+                img: 'image/kol/kol4/6.png'
+            }, {
+                name: '兔纸蜗',
+                url: 'https://weibo.com/xiaowo0703?topnav=1&wvr=6&topsug=1&is_hot=1',
+                img: 'image/kol/kol4/7.png'
+            }, {
+                name: '差不多妈咪Shena',
+                url: 'https://weibo.com/u/6530748281?topnav=1&wvr=6&topsug=1',
+                img: 'image/kol/kol4/8.png'
+            }, {
+                name: '安安里个西西',
+                url: 'https://weibo.com/u/3922723320?topnav=1&wvr=6&topsug=1',
+                img: 'image/kol/kol4/9.png'
+            }, {
+                name: '药麻小团子',
+                url: 'https://weibo.com/cyyzjx?topnav=1&wvr=6&topsug=1',
+                img: 'image/kol/kol4/10.png'
+            }, {
+                name: '紫嫣大大大魔王',
+                url: 'https://weibo.com/zhaoziyan1992?topnav=1&wvr=6&topsug=1',
+                img: 'image/kol/kol4/11.png'
+            }, {
+                name: '咕噜小妖不是兔子精',
+                url: 'https://weibo.com/lanyaoduoduo?topnav=1&wvr=6&topsug=1',
+                img: 'image/kol/kol4/12.png'
+            }, {
+                name: '丞丞妈咪May',
+                url: 'https://weibo.com/meipig88?topnav=1&wvr=6&topsug=1',
+                img: 'image/kol/kol4/13.png'
+            }, {
+                name: '全职麻麻莎莎姐',
+                url: 'https://weibo.com/queensasa?topnav=1&wvr=6&topsug=1',
+                img: 'image/kol/kol4/14.png'
+            }],
+
+            //contact
+            contacttitle: '联系我们',
+            contactentitle: 'CONTANT US',
+            company: '深圳前海思空文化有限公司',
+            companyphone: '0755-26605587',
+            companyaddress1: '深圳：深圳市宝安区新安街道兴东社区留芳路6号庭威产业园3号楼7A',
+            companyaddress2: '上海：上海市普陀区常德路1211号宝华大厦2303室',
+            companyaddress3: '北京：北京市朝阳区十里堡甲3号院万科时代中心2层米域空间',
+            icon1: 'image/index/icon1.png',
+            icon2: 'image/index/icon2.png',
+            contantimg1: 'image/index/business.png',
+            contantcontant1: '商务合作',
+            contantimg2: 'image/index/red.jpg',
+            contantcontant2: '红人签约',
+
+            // footericon
+            joinimg: 'image/index/jone.jpg',
+            topimg: 'image/index/top.jpg',
+
+            // showjoin
+            showjoinimg: 'image/index/join.png',
+            showjoinlist: [{
+                url: 'https://www.lagou.com/gongsi/537416.html',
+                name: '拉钩网'
+            }, {
+                url: 'https://company.zhaopin.com/CZ843159090.htm',
+                name: '智联招聘'
+            }, {
+                url: 'https://jobs.51job.com/all/co5486786.html',
+                name: '前程无忧'
+            }]
+
+        },
+        mounted: function () {
+            this.peoplelist = this.peoplelist1
+        },
+        methods: {
+            selectnamelist: function (ins) {
+                this.nameindex = ins;
+                if (ins == 2) {
+                    this.peoplelist = this.peoplelist2;
+                } else if (ins == 3) {
+                    this.peoplelist = this.peoplelist3;
+                } else if (ins == 4) {
+                    this.peoplelist = this.peoplelist4;
+                } else {
+                    this.peoplelist = this.peoplelist1;
+                }
+            }
+        }
+    })
+</script>
+<script src="js/move.js"></script>
+
+</html>

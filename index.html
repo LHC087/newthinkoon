@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="思空、思空文化、思空集团、思空科技、思空MCN、红人孵化与营销、整合营销、口碑营销" />
+    <meta name='description'
+        content="思空，于2016年成立于深圳，专注于新媒体内容生产，红人经济，营销传播的top mcn 公司。思空文化自营资源覆盖全网4亿粉丝，每月制造热点话题100+，思空文化擅长事件营销，口碑种草，提供更具“传播性”的营销服务。">
+    <title>思空 - 红人孵化与营销</title>
+    <link href="image/index/heardlogo.png" rel="icon" type="image/x-icon" />
+    <link href="css/swiper.min.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id='index'>
+        <div id="showmenu">
+            <div class='header publiccontent'>
+                <div class="headerlogo">
+                    <a href="#index"><img class="lazy" data-original="image/index/logo.png" alt="logo"></a>
+                </div>
+                <div class="headermenu">
+                    <a href="#portfolio"><span>资源矩阵</span></a>
+                    <a href="#case"><span>营销案例</span></a>
+                    <a href="#recruiting"><span>红人招募</span></a>
+                    <a href="#contact"><span>联系我们</span></a>
+                </div>
+            </div>
+        </div>
+        <section id="banner">
+            <!-- Swiper -->
+            <div class="swiper-container swiper-container1">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" v-for='(item,index) in bannerlist'><img :data-src="item.img" alt=""
+                            class='swiper-lazy wid100'>
+                        <div class="swiper-lazy-preloader"></div>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination swiper-pagination1"></div>
+            </div>
+        </section>
+        <section id="portfolio">
+            <div class='publiccontent'>
+                <div class="publictitle">
+                    <h4>{{portfoliotitle}}</h4>
+                    <p>{{portfolioentitle}}</p>
+                </div>
+                <div class="pore">
+                    <div class="swiper-container swiper-container2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide swiper-slide2 animateBorder portfolioclass"
+                                v-for="(item,index) in portfoliolist" :key='index' :class='"portfolioclass" +index'>
+                                <a :href="item.url" target="_blank" rel="noopener noreferrer">
+                                    <div class="wrap">
+                                        <div class="subwrap">
+                                            <div class="content">
+                                                <p>{{item.name}} </p>
+                                                <p class="portfoliochildclass" :class='"portfoliochildclass"+index'
+                                                    v-html='item.contant'></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Add Arrows -->
+                    </div>
+                    <div class="swiper-button-next" style="outline: none;right:-50px;"></div>
+                    <div class="swiper-button-prev" style="outline: none;left:-50px;"></div>
+                </div>
+                <div class="more">
+                    <a :href="portfoliomoreurl">
+                        <p class="morebtn">{{portfoliomorename}}</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Case section -->
+        <section id="case">
+            <div class='publiccontent'>
+                <div class="publictitle">
+                    <h4>{{casetitle}}</h4>
+                    <p>{{caseentitle}}</p>
+                </div>
+                <div class="caseslist">
+                    <div class="caseslists" v-for="(item,index) in casedetailslist" :key='index'>
+                        <a :href="item.url" target="_blank" rel="noopener noreferrer">
+                            <div>
+                                <img class="lazy" :data-original="item.img" alt="Image 01" width="100%">
+                            </div>
+                            <div>
+                                <h5>{{item.title}}</h5>
+                                <p v-for="(items,indexs) in item.tag" :key='indexs' class='tagclass'>
+                                    <span>{{items.name}}</span>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="more">
+                    <a :href="casemoreurl">
+                        <p class="morebtn">{{casemorename}}</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Recruiting section-->
+        <section id="recruiting">
+            <div class="publiccontent">
+                <div class="publictitle">
+                    <h4>{{recruitingtitle}}</h4>
+                    <p>{{recruitingentitle}}</p>
+                </div>
+                <div>
+                    <a :href="recruitingurl"> <img class="lazy wid100" :data-original="recruitingimg"
+                            alt="recruitingimg" /></a>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <div class='publiccontent'>
+                <div class="publictitle">
+                    <h4>{{contacttitle}}</h4>
+                    <p>{{contactentitle}}</p>
+                </div>
+                <div class="pore">
+                    <div class='company'>
+                        <h5>{{company}}</h5>
+                        <h6>{{companyphone}}</h6>
+                        <p>{{companyaddress1}}</p>
+                        <p>{{companyaddress2}}</p>
+                        <p>{{companyaddress3}}</p>
+                        <!-- <img class="lazy companyicon" :data-original="icon1" alt="icon" />
+                        <img class="lazy companyicon" :data-original="icon2" alt="icon" /> -->
+                    </div>
+                    <div class="contantimg">
+                        <div class="contantimgdiv1">
+                            <img class="lazy" :data-original="contantimg1" alt="contantimg1" />
+                            <h5>{{contantcontant1}}</h5>
+                        </div>
+                        <div class="contantimgdiv2">
+                            <img class="lazy" :data-original="contantimg2" alt="contantimg2" />
+                            <h5>{{contantcontant2}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <img id="btn" class="joinus" :src="joinimg">
+        <a href="#index"> <img class="top" :src="topimg"></a>
+        <div id="showjoin" class="showjoins">
+            <div class="showjoindiv">
+                <a id="btncolse">关闭</a>
+                <img alt="join" :src="showjoinimg" />
+                <a v-for='(item,index) in showjoinlist' :key='index' :href="item.url" target="_blank"
+                    :class="'showjoina'+index" rel="noopener noreferrer">
+                    {{item.name}}
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.lazyload.js?v=1.9.1"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/vue.js"></script>
+<script type="text/javascript">
+    var app = new Vue({
+        el: '#index',
+        data: {
+            bannerlist: [{
+                img: 'image/banner/banner1.png'
+            }, {
+                img: 'image/banner/banner2.png'
+            }, {
+                img: 'image/banner/banner3.png'
+            }, {
+                img: 'image/banner/banner4.png'
+            }],
+            //portfolio
+            portfoliotitle: '资源矩阵',
+            portfolioentitle: 'RESOURCE MATRIX',
+            portfoliolist: [{
+                name: "回忆专用小马甲",
+                contant: '最具商业价值红人<br/>微博十大影响力人气大V <br/>微博十大影响力人气大V',
+                url: 'https://weibo.com/u/3217179555',
+            }, {
+                name: "刘仪伟",
+                contant: '最佳生活节目主持人<br/>第16届上海电视节<br/>年度风云人物<br/>福布斯中国名人榜上榜人物',
+                url: 'https://v.douyin.com/7srvkd/',
+            }, {
+                name: "追风少年刘全有",
+                contant: '微博年度十大热搜人物<br/>微博十大影响力人气大V',
+                url: 'https://weibo.com/u/2150511032',
+            }, {
+                name: "小萝卜heidi",
+                contant: '抖音百万级红人',
+                url: 'https://www.xiaohongshu.com/user/profile/5a2fad1e4eacab7fff395adf',
+            }, {
+                name: "大睿睿",
+                contant: '微博新锐时尚美妆红人<br/>小红书百万级红人',
+                url: 'https://www.xiaohongshu.com/user/profile/53d39b5bb4c4d6733971ae73',
+            }, {
+                name: "棚户区男孩",
+                contant: '微博十大影响力颜值VLOG红人<br/>微博新锐红人',
+                url: 'https://weibo.com/mozart1994',
+            }, {
+                name: "晁然然然然",
+                contant: '全平台型艺人<br/>《最好的我们》饰演洛枳学姐',
+                url: 'https://weibo.com/u/2140998643',
+            }, {
+                name: "可可的粽子妈",
+                contant: '母婴育儿博主<br/>国家二级心理咨询师',
+                url: 'https://weibo.com/u/6171687597',
+            }, {
+                name: "Echo小茵茵",
+                contant: '微博十大商业价值母婴育儿大V<br/>新浪母婴育儿大赏影响力红人<br/>搜狐母婴最受网友喜爱账号大赏<br/>育儿网妈妈社区最佳',
+                url: 'https://weibo.com/justechochan?topnav=1&wvr=6&topsug=1',
+            }, {
+                name: "喜悦姑娘Clara",
+                contant: '严肃又活泼的90后时尚博主<br/>时尚触感极强<br/>造型超级百变',
+                url: 'https://www.xiaohongshu.com/user/profile/596f20d582ec3965e7d47959',
+            }, {
+                name: "孔维w",
+                contant: '有颜有才的侧脸男神<br/>时尚摄影领域的文艺才子',
+                url: 'https://weibo.com/numberw',
+            }, {
+                name: "松鼠视频",
+                contant: '全球性的短视频资讯平台，总订阅数达2000万，日均播放量1000万',
+                url: 'https://weibo.com/u/2393541445?',
+            }, {
+                name: "是丸子啊",
+                contant: '口红狂热爱好者<br/>国风美少女<br/>小红书百万级红人',
+                url: 'https://www.xiaohongshu.com/user/profile/56c51ff1aed7581d118f26de',
+            }, {
+                name: "谷大白话",
+                contant: '十大影响力人气博主<br/>克劳锐最具影响力影视自媒体<br/>知名欧美资讯博主翻译大神',
+                url: 'https://weibo.com/ichthy?refer_flag=1005055014_',
+            }, {
+                name: "Kira小魔女",
+                contant: '时髦精辣妈，个人及亲子穿搭分享，品质生活，独特育儿经和母婴好物分享。',
+                url: 'https://weibo.com/u/3193441137',
+            }, {
+                name: "八组今天安利什么",
+                contant: '混迹豆瓣论坛，热衷于搜集与分享干货和种草好物的八组小可爱。',
+                url: 'https://weibo.com/u/6234081424?topnav=1&wvr=6&topsug=1',
+            }, {
+                name: "郭科",
+                contant: '法国蓝带厨艺荣誉勋章粤港澳名厨奖章第三届国际中餐青年厨师争霸赛特金奖第四届全国烹饪大赛热菜&凉菜双项特金奖<br/>青岛餐饮行业协会副会长',
+                url: 'https://v.douyin.com/7sFEkN/',
+            }, {
+                name: "直男什么值得买",
+                contant: '一个擅长种草安利时尚<br/>数码类的男性博主',
+                url: 'https://weibo.com/u/6207153100',
+            }, {
+                name: "郑蛋恩",
+                contant: '《最好的我们》郑晓雯<br />温柔可爱的酒窝少女',
+                url: 'https://weibo.com/loviancheng',
+            }, {
+                name: "熊孩子翻车现场",
+                contant: '微博认证知名母婴育儿博主<br/>育儿视频自媒体',
+                url: 'https://weibo.com/p/1005055869826499/home',
+            }],
+            portfoliomorename: "MORE",
+            portfoliomoreurl: 'kol.html',
+
+            //case
+            casetitle: '营销案例',
+            caseentitle: 'MARKETIMNG CASE',
+            casedetailslist: [{
+                    title: '美图T9手机推广项目',
+                    url: 'https://creative.adquan.com/show/48781',
+                    img: 'image/case/1.jpg',
+                    tag: [{
+                        name: '美图'
+                    }, {
+                        name: '电子'
+                    }]
+                }, {
+                    title: '天猫年货节#猫在一起过鼠年#',
+                    url: 'https://dwz.cn/j77npDRy',
+                    img: 'image/case/2.jpg',
+                    tag: [{
+                        name: '天猫'
+                    }, {
+                        name: '淘宝'
+                    }, {
+                        name: '萌宠'
+                    }, {
+                        name: '春节'
+                    }]
+                },
+                {
+                    title: '植观双十一微博话题营销案例',
+                    url: 'https://mobile.adquan.com/creative/detail/292126',
+                    img: 'image/case/3.jpg',
+                    tag: [{
+                        name: '洗发水'
+                    }, {
+                        name: '营销推广'
+                    }, {
+                        name: 'IP合作'
+                    }]
+                },
+                {
+                    title: '聚划算·品牌聚星#我的美，关你PS#',
+                    url: 'https://dwz.cn/EFXER0cy',
+                    img: 'image/case/4.jpg',
+                    tag: [{
+                        name: '淘宝'
+                    }, {
+                        name: '聚划算'
+                    }, {
+                        name: '美妆'
+                    }, {
+                        name: '创意'
+                    }]
+                },
+                {
+                    title: '抖音“集音符”活动，瓜分5亿万现金红包',
+                    url: 'https://dwz.cn/0CAkNrvK',
+                    img: 'image/case/5.jpg',
+                    tag: [{
+                        name: '抖音'
+                    }, {
+                        name: '春节'
+                    }]
+                },
+                {
+                    title: '卡姿兰内容营销推广',
+                    url: 'https://mp.weixin.qq.com/s/vAy6oRrYJmyi4Lc8vc5_SA',
+                    img: 'image/case/6.jpg',
+                    tag: [{
+                        name: '卡姿兰'
+                    }, {
+                        name: '美妆'
+                    }]
+                }
+            ],
+            casemorename: "MORE",
+            casemoreurl: 'casedetails.html',
+
+            //recruiting
+            recruitingtitle: '红人招募',
+            recruitingentitle: 'REDS RECRUITING',
+            recruitingimg: "image/index/redpeople1.png",
+            recruitingurl: 'red.html',
+
+            //contact
+            contacttitle: '联系我们',
+            contactentitle: 'CONTANT US',
+            company: '深圳前海思空文化有限公司',
+            companyphone: '0755-26605587',
+            companyaddress1: '深圳：深圳市宝安区新安街道兴东社区留芳路6号庭威产业园3号楼7A',
+            companyaddress2: '上海：上海市普陀区常德路1211号宝华大厦2303室',
+            companyaddress3: '北京：北京市朝阳区十里堡甲3号院万科时代中心2层米域空间',
+            icon1: 'image/index/icon1.png',
+            icon2: 'image/index/icon2.png',
+            contantimg1: 'image/index/business.png',
+            contantcontant1: '商务合作',
+            contantimg2: 'image/index/red.jpg',
+            contantcontant2: '红人签约',
+
+            // footericon
+            joinimg: 'image/index/jone.jpg',
+            topimg: 'image/index/top.jpg',
+
+            // showjoin
+            showjoinimg: 'image/index/join.png',
+            showjoinlist: [{
+                url: 'https://www.lagou.com/gongsi/537416.html',
+                name: '拉钩网'
+            }, {
+                url: 'https://company.zhaopin.com/CZ843159090.htm',
+                name: '智联招聘'
+            }, {
+                url: 'https://jobs.51job.com/all/co5486786.html',
+                name: '前程无忧'
+            }]
+
+
+        }
+    })
+</script>
+<script src="js/move.js"></script>
+<script>
+    $(window).scroll(function (event) {
+        checkscroll()
+    });
+
+    function checkscroll() {
+        var winPos = $(window).scrollTop(); //屏幕位置
+        var NodePos = [$('#portfolio').offset().top, $('#case').offset().top, $('#recruiting').offset().top,
+                $('#contact').offset().top
+            ], //提前获取好元素位置
+            length = NodePos.length;
+
+        if (winPos < NodePos[0]) {
+            $('.headermenu a').removeClass('activehover');
+        }
+        if (winPos >= (NodePos[0] - 200) && winPos < NodePos[1]) {
+            $('.headermenu a').removeClass('activehover');
+            $('.headermenu a:nth-child(1)').addClass('activehover');
+        }
+        if (winPos >= (NodePos[1] - 200) && winPos < NodePos[2]) {
+            $('.headermenu a').removeClass('activehover');
+            $('.headermenu a:nth-child(2)').addClass('activehover');
+        }
+        if (winPos >= (NodePos[2] - 200) && winPos < NodePos[3]) {
+            $('.headermenu a').removeClass('activehover');
+            $('.headermenu a:nth-child(3)').addClass('activehover');
+        }
+        if (winPos >= (NodePos[3] - 200)) {
+            $('.headermenu a').removeClass('activehover');
+            $('.headermenu a:nth-child(4)').addClass('activehover');
+        }
+    }
+</script>
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container1', {
+        pagination: '.swiper-pagination1',
+        paginationClickable: true,
+        autoplay: 1500,
+        loop: true,
+        lazyLoading: true,
+    });
+    var swiper = new Swiper('.swiper-container2', {
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 5,
+        slidesPerColumn: 2,
+        slidesPerGroup: 10,
+        grabCursor: true,
+        spaceBetween: 7
+    });
+</script>
+
+</html>

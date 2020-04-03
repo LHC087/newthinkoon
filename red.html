@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="keywords" content="思空、思空文化、思空集团、思空科技、思空MCN、红人孵化与营销、整合营销、口碑营销" />
+  <meta name='description'
+    content="思空，于2016年成立于深圳，专注于新媒体内容生产，红人经济，营销传播的top mcn 公司。思空文化自营资源覆盖全网4亿粉丝，每月制造热点话题100+，思空文化擅长事件营销，口碑种草，提供更具“传播性”的营销服务。">
+  <title>思空 - 红人孵化与营销</title>
+  <link href="image/index/heardlogo.png" rel="icon" type="image/x-icon" />
+  <link href="css/animate.css" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body id='index'>
+  <div id='redpage'>
+    <div id="showmenu">
+      <div class='header publiccontent'>
+        <div class="headerlogo">
+          <a href="index.html"><img src="image/index/logo.png" alt="logo"></a>
+        </div>
+        <div class="headermenu">
+          <a href="index.html#portfolio"><span>资源矩阵</span></a>
+          <a href="index.html#case"><span>营销案例</span></a>
+          <a class="activehover" href="index.html#recruiting"><span>红人招募</span></a>
+          <a href="#contact"><span>联系我们</span></a>
+        </div>
+      </div>
+    </div>
+    <section>
+      <div>
+        <img class="lazy wid100" :data-original="headbanner" alt="Image01">
+      </div>
+    </section>
+    <section>
+      <div class="publiccontent">
+        <div class="publictitle">
+          <h4>{{title}}</h4>
+          <p>{{entitle}}</p>
+        </div>
+        <div>
+          <img class="lazy wid100" :data-original="contantimg" alt="Image01">
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class='publiccontent'>
+        <div class="publictitle">
+          <h4>{{contacttitle}}</h4>
+          <p>{{contactentitle}}</p>
+        </div>
+        <div class="pore">
+          <div class='company'>
+            <h5>{{company}}</h5>
+            <h6>{{companyphone}}</h6>
+            <p>{{companyaddress1}}</p>
+            <p>{{companyaddress2}}</p>
+            <p>{{companyaddress3}}</p>
+            <!-- <img class="lazy companyicon" :data-original="icon1" alt="icon" />
+                        <img class="lazy companyicon" :data-original="icon2" alt="icon" /> -->
+          </div>
+          <div class="contantimg">
+            <div class="contantimgdiv1">
+              <img class="lazy" :data-original="contantimg1" alt="contantimg1" />
+              <h5>{{contantcontant1}}</h5>
+            </div>
+            <div class="contantimgdiv2">
+              <img class="lazy" :data-original="contantimg2" alt="contantimg2" />
+              <h5>{{contantcontant2}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <img id="btn" class="joinus" :src="joinimg">
+    <a href="#index"> <img class="top" :src="topimg"></a>
+    <div id="showjoin" class="showjoins">
+      <div class="showjoindiv">
+        <a id="btncolse">关闭</a>
+        <img alt="join" :src="showjoinimg" />
+        <a v-for='(item,index) in showjoinlist' :key='index' :href="item.url" target="_blank" :class="'showjoina'+index"
+          rel="noopener noreferrer">
+          {{item.name}}
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.lazyload.js?v=1.9.1"></script>
+<script src="js/vue.js"></script>
+<script type="text/javascript">
+  var app = new Vue({
+    el: '#redpage',
+    data: {
+      headbanner: 'image/kol/banner.jpg',
+      title: '红人招募',
+      entitle: 'REDS RECRUITING',
+      contantimg: 'image/red/1.jpg',
+
+      //contact
+      contacttitle: '联系我们',
+      contactentitle: 'CONTANT US',
+      company: '深圳前海思空文化有限公司',
+      companyphone: '0755-26605587',
+      companyaddress1: '深圳：深圳市宝安区新安街道兴东社区留芳路6号庭威产业园3号楼7A',
+      companyaddress2: '上海：上海市普陀区常德路1211号宝华大厦2303室',
+      companyaddress3: '北京：北京市朝阳区十里堡甲3号院万科时代中心2层米域空间',
+      icon1: 'image/index/icon1.png',
+      icon2: 'image/index/icon2.png',
+      contantimg1: 'image/index/business.png',
+      contantcontant1: '商务合作',
+      contantimg2: 'image/index/red.jpg',
+      contantcontant2: '红人签约',
+
+      // footericon
+      joinimg: 'image/index/jone.jpg',
+      topimg: 'image/index/top.jpg',
+
+      // showjoin
+      showjoinimg: 'image/index/join.png',
+      showjoinlist: [{
+        url: 'https://www.lagou.com/gongsi/537416.html',
+        name: '拉钩网'
+      }, {
+        url: 'https://company.zhaopin.com/CZ843159090.htm',
+        name: '智联招聘'
+      }, {
+        url: 'https://jobs.51job.com/all/co5486786.html',
+        name: '前程无忧'
+      }]
+
+    }
+  })
+</script>
+<script src="js/move.js"></script>
+
+</html>
